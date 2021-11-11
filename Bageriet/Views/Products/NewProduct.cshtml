@@ -1,0 +1,45 @@
+﻿@model ProductsViewModel
+<!--Title block-->
+<div class="page-block">
+    <h1 class="text-white text-monospace heading">@ViewBag.PageTitle</h1>
+    <button type="button" class="btn btn-outline-light" onclick="history.back()">Tillbaka</button>
+</div>
+
+<!--Page content-->
+<div class="jumbotron bg-color content-container form-content">
+
+    <!--Success message-->
+    <div class="alert alert-success text-dark success none" id="success">Allt gick bra ...</div>
+
+    <!--Error message-->
+    <div class="alert alert-warning text-dark error none" id="error">Något har gått snett, var vänlig försök igen senare ...</div>
+
+    <!--New product form-->
+    <form method="post" enctype="multipart/form-data" name="product" onsubmit="return saveProduct(this)">
+        <div class="form-group">
+            <label asp-for="Name">Produkt namn</label>
+            <input class="form-control" asp-for="Name" placeholder="Produkt namn ..." required>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Produkt beskrivning</label>
+            <textarea class="form-control" asp-for="Description" name="Description" rows="5" placeholder="Din text här ..." required></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image">Ladda upp bild</label>
+            <div class="custom-file">
+                <input asp-for="Image" class="form-control custom-file-input" name="Image" required>
+                <label asp-for="Image" class="custom-file-label">Select din bild ...</label>
+            </div>
+        </div>
+        <br />
+        <div class="form-check-inline">
+            <label asp-for="Visible" class="form-check-label">
+                <input asp-for="Visible" name="Visible" class="form-check-input">
+                Synlig för besökare på hemsidan
+            </label>
+        </div>
+        <div class="clearfix"></div>
+        <button type="submit" class="btn btn-outline-success">Skicka</button>
+        <button type="reset" class="btn btn-outline-danger">Återställa</button>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Ratings>
+@inject UserManager<Users> UserManager
+
+@{
+    var user = UserManager.GetUserAsync(User).Result;
+    var rating = (Model != null) ? Model.FirstOrDefault(x => x.User.Id == user.Id) : null;
+
+    // Make sure the current user has already rated the product
+    if (rating == null)
+    {
+        <div class="ratings-holder">
+            @{
+                var grades = new List<string> { "Mycket dåligt", "Dåligt", "Bra", "Mycket bra", "Perfekt" };
+                for (var i = 1; i <= grades.Count(); i++)
+                {
+                    var radio = "grade0" + i;
+                    <p class="ratings-stars" onclick="addRating(@i)">
+                        <span class="star-visible">☆</span>
+                        <span class="star-hover" title="@grades[i-1]">★</span>
+                    </p>
+                }
+            }
+        </div>
+    }
+}

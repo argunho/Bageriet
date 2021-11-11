@@ -1,0 +1,59 @@
+﻿@model Contacts;
+@inject SignInManager<Users> SignInManager
+@inject UserManager<Users> UserManager
+@{
+    var c = Model;
+}
+<!--Title block-->
+<div class="page-block">
+    <h1 class="text-white text-monospace heading">@ViewBag.PageTitle</h1>
+    @if (User.IsInRole("Admin"))
+    {
+        <button type="button" class="btn btn-outline-light" id="manage_contacts" onclick="manageContacts()">Redigera</button>
+    }
+</div>
+
+<!--Page content-->
+<div class="jumbotron bg-color">
+
+    <!--Success message-->
+    <div class="alert alert-success text-dark success none" id="success">Allt gick bra ...</div>
+
+    <!--Error message-->
+    <div class="alert alert-warning text-warning error none" id="error">Något har gått snett, var vänlig försök igen senare ...</div>
+
+    @if (c != null)
+    {
+        <!--Show or edit contacts form-->
+        <form action="" method="post" name="contacts">
+            <input type="hidden" name="Id" value="1" />
+            <div class="form-inline m-1">
+                <label class="text-white text-left col-4">Email</label>
+                <input type="text" name="Email" class="form-control col-8" value="@c.Email" disabled />
+            </div>
+            <div class="form-inline m-1">
+                <label class="text-white text-left col-4">Tel</label>
+                <input type="text" name="Phone" class="form-control col-8" value="@c.Phone" disabled />
+            </div>
+            <div class="form-inline m-1">
+                <label class="text-white text-left col-4">Adress</label>
+                <input type="text" name="Address" class="form-control col-8" value="@c.Address" disabled />
+            </div>
+            <div class="form-inline m-1">
+                <label class="text-white text-left col-4">Stad</label>
+                <input type="text" name="City" class="form-control col-8" value="@c.City" disabled />
+            </div>
+            <div class="form-inline m-1">
+                <label class="text-white text-left col-4">Postnummer</label>
+                <input type="text" name="Zip" class="form-control col-8" value="@c.Zip" disabled />
+            </div>
+            <button type="submit" class="btn btn-outline-primary hidden" id="save_contacts">Spara</button>
+        </form>
+    }
+    else
+    {
+        <div class="alert alert-warning text-dark">Tyvärr, denna sidan är tom för nuvarande ...</div>
+    }
+
+</div>
+

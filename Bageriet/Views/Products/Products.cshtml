@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Products>
+<!--Title block-->
+<div class="page-block">
+    <h1 class="text-white text-monospace heading">@ViewBag.PageTitle</h1>
+    @if (User.IsInRole("Admin"))
+    {
+        <button type="button" class="btn btn-outline-light" onclick="location.href = '/Products/NewProduct'">Registrera ny</button>
+    }
+</div>
+
+<!--Page content-->
+<div class="jumbotron bg-color content-container">
+    @if (Model.Count() > 0)
+    {
+        foreach (var p in Model.OrderByDescending(x => x.Id))
+        {
+            var bg = "background-image: url(" + p.Image + ");background-size: cover;background-repeat: no-repeat;background-position: center;";
+            <div class="product-container" onclick="location.href = 'ViewProduct/' + @p.Id">
+                <div class="product-img-container" style="@bg"></div>
+                <div class="product-content-container">
+                    <p class="product-name">@p.Name</p>
+                    <p class="product-description">@p.Description</p>
+
+                    <!-- Ratings -->
+                    <div class="products-list-ratings">
+                        @await Component.InvokeAsync("Ratings", new { id = p.Id })
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="alert alert-warning text-dark">Denna sidan är tom ...</div>
+    }
+</div>

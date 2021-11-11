@@ -1,0 +1,56 @@
+﻿@model Products
+<!--Title block-->
+<div class="page-block">
+    <h1 class="text-white text-monospace heading product-view-name">@ViewBag.PageTitle</h1>
+    <button type="button" class="btn btn-outline-light" onclick="history.back()">Tillbaka</button>
+</div>
+
+<!--Page content-->
+<div class="jumbotron bg-color content-container product-view-container">
+    <div class="product-view-content-wrapper">
+        <!-- Product content holder -->
+        <div class="row">
+            <div class="col-lg-5 col-xs-12">
+                <img src="@Url.Content(Model.Image)" class="img-thumbnail float-left" width="100%" />
+            </div>
+            <div class="col-lg-7 col-xs-12 product-view-description position-raltive">
+                @Model.Description
+            </div>
+
+            <div class="product-comments-block" id="comments_block">
+                <!--Comments partial-->
+                @await Component.InvokeAsync("CommentsList", new { id = Model.Id })
+            </div>
+        </div>
+    </div>
+
+    <!--Ratings-->
+    @await Component.InvokeAsync("Ratings", new { id = Model.Id })
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <!-- Actions menu -->
+        <div class="product-actions-menu" id="pam">
+            <!-- Set ratings-->
+            @await Component.InvokeAsync("RatingsList", new { id = Model.Id })
+
+            <!-- Set visible textarea for comments -->
+            <span id="comments">Lägga till kommentar</span>
+        </div>
+    }
+
+    <!-- Comments form -->
+    <div class="form-block" id="comments_form_block">
+        <form method="post" name="comments" class="comments-form" onsubmit="return addComments(this)">
+            <input type="hidden" name="ProductId" value="@Model.Id" />
+            <div class="form-group">
+                <textarea class="form-control" rows="4" name="Text" placeholder="Din kommentar här ..."></textarea>
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-sm btn-outline-secondary" value="✖" id="cancel" />
+                <input type="reset" class="btn btn-sm btn-outline-danger" value="Återställa" />
+                <input type="submit" class="btn btn-sm btn-outline-success" value="Skicka" />
+            </div>
+        </form>
+    </div>
+</div>

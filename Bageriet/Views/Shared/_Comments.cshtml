@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Comments>
+
+@if (Model != null)
+{
+    var author = "";
+    foreach (var c in Model)
+    {
+        if (author != c.User?.Name)
+        {
+            <p class="comments-author">Skribent: <span>@c.User?.Name</span></p>
+            author = c.User?.Name;
+        }
+        <p class="comments-date">@c.Date</p>
+        <p class="product-comments"> @c.Text </p>
+    }
+}

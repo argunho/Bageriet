@@ -1,0 +1,20 @@
+﻿@model Ratings
+
+@{
+    var ratings = (Model != null) ? Model.Rating : 0; 
+    <div class="ratings-block">
+        @{
+            for (var i = 1; i <= 5; i++)
+            {
+                if (i > ratings)
+                {
+                    <p>☆</p>
+                }
+                else
+                {
+                    <p class="rating-stars">★</p>
+                }
+            }
+        }
+    </div>
+}

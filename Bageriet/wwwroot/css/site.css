@@ -1,0 +1,556 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/*Mina styles*/
+.body {
+    background-image: url("/images/bakery_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-color, footer {
+    background-color: #25181C !important;
+}
+
+.bg-color {
+    box-shadow: 0 5px 3px -2px rgba(0,0,0,.7), 0 4px 4px 0 rgba(0,0,0,.64), 0 3px 7px 0 rgba(0,0,0,.62);
+}
+
+    .bg-color a, .welcome-msg {
+        color: #FFF !important;
+    }
+
+        .bg-color a:hover {
+            color: #E7B475 !important;
+        }
+
+        .bg-color a:active, .bg-color a:focus {
+            color: #FFF !important;
+            transform: scale(0.95);
+        }
+
+
+a.active-link {
+    color: #e5842d !important;
+    transform: scaleY(1.4);
+}
+
+input:disabled {
+    background-color: rgb(251, 233, 170) !important;
+    color: #25181C;
+    font-size: 25px;
+}
+
+.bg-color .form-inline, .form-control {
+    font-size: 25px !important;
+}
+
+.heading {
+    margin: 25px 0 15px 0;
+}
+
+div.container {
+    font-family: "Courier New" !important;
+}
+
+.container h1 {
+    font-family: 'Comic Sans MS' !important;
+    font-size: 50px !important;
+    margin-bottom: 25px !important;
+}
+
+div.container > a {
+    font-size: 35px !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-right: 40px;
+}
+
+div.collapse > ul li a, .welcome-msg {
+    font-size: 20px !important;
+    text-transform: uppercase !important;
+}
+
+.bg-color .form-inline > label {
+    display: inline;
+    text-align: left !important;
+}
+
+.welcome-img {
+    height: 68vh;
+    margin-bottom: 0;
+}
+
+.page-block {
+    width: 100%;
+    position: relative;
+}
+
+    .page-block > button {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        background: #25181C !important;
+    }
+
+        .page-block > button:hover {
+            color: #E7B475 !important;
+            border-color: #E7B475 !important;
+        }
+
+.hidden {
+    visibility: hidden;
+}
+
+.none {
+    display: none !important;
+}
+
+.welcome-msg {
+    position: absolute;
+    top: 8px;
+    right: 75px;
+    color: #D97821 !important;
+}
+
+/*Product list*/
+.content-container {
+    height: 68vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 0;
+    padding: 15px 15px 0 15px !important;
+    position: relative;
+}
+
+.product-container {
+    width: 100%;
+    font-size: 16px;
+    color: #FFF;
+    padding: 3px;
+    margin-bottom: 15px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 3px 1px -2px rgba(225, 225, 225, .9), 0 2px 2px 0 rgba(225, 225, 225, .84), 0 1px 5px 0 rgba(225, 225, 225, .82);
+}
+
+    .product-container:hover {
+        cursor: pointer;
+        /*color: #25181C;*/
+        background: #1A0D09;
+    }
+
+    .product-container > div {
+        float: left;
+        height: 100%;
+    }
+
+.product-img-container {
+    width: 200px;
+    transition: all 0.4s ease-in-out;
+}
+
+.product-container:hover .product-img-container {
+    border-radius: 50% !important;
+    border: 5px dashed #25181C;
+}
+
+.product-content-container {
+    width: calc(100% - 216px);
+    padding-left: 10px;
+    position: relative;
+}
+
+.product-name {
+    width: 100%;
+    font-size: 28px;
+    font-weight: 600;
+    display: block;
+    overflow: hidden;
+    font-family: monospace;
+}
+
+.product-description {
+    display: block;
+    width: 100%;
+}
+
+.products-list-ratings {
+    position: absolute;
+    width: 250px;
+    right: 5px;
+    bottom: -5px;
+    display: block;
+    text-align: right;
+}
+
+/* Comments block on product view page */
+.product-comments-block {
+    width: 100%;
+    padding: 15px 15px 70px 15px;
+    color: #FFF;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.comments-author {
+    font-weight: 600;
+    margin-bottom: 10px !important;
+    letter-spacing: 1px;
+}
+
+.comments-author > span {
+    color: #D97821;
+    margin-left: 5px;
+}
+
+.comments-date {
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Agency FB';
+    color: #E7B475;
+    width: 98%;
+    margin: 5px auto 0 auto;
+}
+
+.product-comments {
+    display: block;
+    width: 98%;
+    margin: 0 auto 20px auto;
+    border-top: 1px solid #E7B475;
+    padding: 10px;
+}
+
+/* Comments form */
+.form-block  {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(37, 24, 28, 0.95);
+    z-index: 0;
+    opacity: 0;
+    height: 68vh;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.comments-form {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    padding: 15px;
+}
+
+.visible-block {
+    opacity: 1 !important;
+    z-index: 3000 !important;
+    visibility: visible !important;
+}
+
+/* Product view */
+.product-view-container{
+    overflow: hidden;
+}
+
+.product-view-content-wrapper {
+    height: 100%;
+    padding-bottom: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.product-view-name {
+    color: #FEEFC0 !important;
+}
+
+.product-view-description {
+    color: #FFF;
+    font-size: 28px;
+    padding: 0 15px;
+    font-family: Constantia;
+}
+
+.product-actions-menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    padding: 20px 15px;
+    text-align: right;
+    width: 100%;
+    color: #E7B475;
+    transition: all 0.9s ease-in-out;
+    background: #25181C;
+    height: 70px;
+}
+
+.product-actions-menu {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: auto 10px;
+    line-height: 50px;
+}
+
+#comments {
+    margin-right: 15px;
+}
+        #comments:hover {
+            cursor: pointer;
+            color: #FFF;
+        }
+
+/* Ratings */
+.ratings-holder {
+    height: 100%;
+    /*float: left;*/
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+}
+
+.ratings-stars {
+    width: 40px;
+    float: left;
+    text-align: center;
+    margin-left: 5.5px;
+}
+
+.ratings-stars span {
+    font-size: 42px;
+    cursor: pointer;
+}
+
+span.star-hover {
+    display: none;
+}
+
+.ratings-stars:hover > span.star-visible {
+    display: none !important;
+}
+
+.ratings-stars:hover > span.star-hover {
+    display: unset !important;
+    transform: scale(1.5);
+}
+
+.ratings-block {
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    width: 100%;
+    max-width: 300px;
+    z-index: 4000;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.ratings-block p {
+    display: inline-block;
+    margin: 0;
+}
+
+.rating-stars {
+    color: #e6d408;
+    font-weight: 600;
+}
+
+/*Products form page*/
+.form-content {
+    overflow: unset !important;
+}
+
+    .form-content > form {
+        width: 70%;
+        display: block;
+        margin: 25px auto;
+        min-width: 400px;
+        padding: 50px 20px;
+        color: #FFF;
+        overflow: hidden;
+    }
+
+form button {
+    float: right;
+    margin: 10px 0 0 10px;
+}
+
+.error, .success {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    width: calc(100% - 20px);
+}
+
+/* Sign in */
+.btn-login, #logoutForm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-login-active {
+    border-color: #C96F22;
+}
+
+.btn-login > img {
+    width: 35px;
+}
+
+.action-link {
+    text-align: center;
+    color: #E7B475;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    left: 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+    .action-link > span {
+        /*color: #1b6ec2;
+        font-weight: 600;*/
+        transition: width 1s;
+    }
+
+    .action-link span:not(.span-link-active):hover {
+        color: rgba(225, 225, 225, .84);
+        cursor: pointer;
+    }
+
+.span-link-active {
+    color: #D97821;
+}
+
+#dynamicForm {
+    width: 50%;
+    padding: 30px;
+    border: 1px solid #E7B475;
+    border-radius: 3px;
+    margin-top: 60px;
+}
+
+#logoutForm {
+    top: -10px;
+}
+
+    #logoutForm > button {
+        position: unset !important;
+    }
+
+
+
+
+
+
+/* Scroll width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(98, 96, 96, 0.5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #25181C;
+}
+
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #EDD584;
+    }
+
+
+/*Override*/
+.custom-file-label {
+    font-size: 25px;
+}
+

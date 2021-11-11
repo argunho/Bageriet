@@ -1,0 +1,53 @@
+﻿@model AccountViewModel
+
+<!--Title block-->
+<div class="page-block">
+    <h1 class="text-white text-monospace heading">Regstrering</h1>
+    <button type="button" class="btn btn-outline-light" id="manage_contacts" onclick="history.back()">Tillbaka</button>
+</div>
+<!--Page content-->
+<div class="jumbotron bg-color content-container form-content">
+
+    <!--Success message-->
+    <div class="alert alert-success text-dark success none" id="success">Allt gick bra ...</div>
+
+    <!--Error message-->
+    <div class="alert alert-warning text-warning error none" id="error">Något har gått snett, var vänlig försök igen senare ...</div>
+
+    <!--Registrering form-->
+    <form method="post" name="Register" onsubmit="return sendAuthenticationsData(this)" id="dynamicForm">
+        <div class="form-group" id="hide">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" placeholder="Ditt namn ..." required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input class="form-control" asp-for="Email" placeholder="Din email ..." id="required" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input type="password" class="form-control" asp-for="Password" placeholder="Ditt lösenord ..." required>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group" id="hide">
+            <label asp-for="ConfirmPassword"></label>
+            <input type="password" class="form-control" asp-for="ConfirmPassword" placeholder="Bekräfta ditt lösenord ..." id="required" required />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="form-group none" id="remember">
+            <div class="checkbox">
+                <label asp-for="RememberMe">
+                    <input asp-for="RememberMe" />
+                    @Html.DisplayNameFor(m => m.RememberMe)
+                </label>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <button type="submit" class="btn btn-outline-success" id="send">Skicka</button>
+        <button type="reset" class="btn btn-outline-danger" id="reset">Återställa</button>
+    </form>
+
+    <p class="action-link"><span class="span-link-active" id="register">Registrering</span> | <span id="authorize">Logga in</span></p>
+</div>

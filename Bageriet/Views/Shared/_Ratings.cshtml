@@ -1,0 +1,13 @@
+﻿<div class="ratings-holder">
+    @{
+        var grades = new List<string> { "Mycket dåligt", "Dåligt", "Bra", "Mycket bra", "Perfekt" };
+        for (var i = 1; i <= grades.Count(); i++)
+        {
+            var radio = "grade0" + i;
+            <p class="ratings-stars" onclick="addRating(@i)">
+                <span class="star-visible">⭐</span>
+                <span class="star-hover" title="@grades[i-1]">🌟</span>
+            </p>
+        }
+    }
+</div>
