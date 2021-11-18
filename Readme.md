@@ -1,7 +1,8 @@
-# Studie Upgift: Bageriet (Asp.Net Core 3.1 mvc)
+# Studieuppgift: Bageriet (Asp.Net Core 3.1 mvc)
 Kontinuerlig inlämningsuppgift för kursen Dynamiska Webbsystem 1
 
 [Demo](http://argunho-002-site2.ftempurl.com)
+Design är inte riktigt bra anpassat för mobil enheter
 
 I denna uppgift ska du skapa din första riktiga webbapplikation i C#, kunden är i detta fallet en bagare som vill lägga upp sina tillgängliga produkter på en hemsida. Kunden vill ha kunna visa sina kontaktuppgifter och tillgängliga produkter. I framtiden ska hemsidan byggas ut med stöd för direktbeställningar från nätet - men nu vill bagaren ha en första sida klar så snart som möjligt!
 
@@ -16,9 +17,3 @@ I denna uppgift ska du skapa din första riktiga webbapplikation i C#, kunden ä
 ### Ytterligare önskemål:
 
 För VG på uppgiften krävs det att lösningen ska vara byggd med goda objektorienterade principer, framförallt sett till vart listan med produkterna är definierad. Tänk på att vi kommer fortsätta jobba med denna uppgift i nästa inlämningsuppgift, _bageriet 2.0._ Så att få en bra struktur i denna uppgift är viktig för att för att underlätta även i nästa veckas uppgift.
-
-### Rapport och inlämning
-
-Inlämningen ska innehålla en rapport, denna rapport ska kort beskriva din förståelse över designmönstret MVC och hur du tillämpat det i din lösning.
-
-När du är färdig med din uppgift så skall du bifoga repporten som ett pdf-dokument, som dessutom innehåller en länk till ditt gitrepo.
