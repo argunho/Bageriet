@@ -1,6 +1,8 @@
 # Studie Upgift: Bageriet (Asp.Net Core 3.1 mvc)
 Kontinuerlig inlämningsuppgift för kursen Dynamiska Webbsystem 1
 
+[Demo](http://argunho-002-site2.ftempurl.com/)
+
 I denna uppgift ska du skapa din första riktiga webbapplikation i C#, kunden är i detta fallet en bagare som vill lägga upp sina tillgängliga produkter på en hemsida. Kunden vill ha kunna visa sina kontaktuppgifter och tillgängliga produkter. I framtiden ska hemsidan byggas ut med stöd för direktbeställningar från nätet - men nu vill bagaren ha en första sida klar så snart som möjligt!
 
 ### Kravspecifikation:
